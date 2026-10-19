@@ -1,0 +1,184 @@
+/*
+ * Donnie Does It LLC: shared components.
+ * Built only from the tokens in tokens.css (generated from design/tokens.ts).
+ * Class names follow the future Astro components:
+ *   layout/Header (.site-header .site-nav .nav-link .logo), layout/Footer (.site-footer),
+ *   home/Hero (.hero), home/Services (.card .card-grid), home/ServiceAreas (.pill .pill-row),
+ *   home/Portfolio (.gallery), home/Reviews (.quote), home/Stats (.stat), shared (.section .section-head .button).
+ * Fonts: Inter and Source Serif 4 from fonts.bunny.net.
+ */
+@import url('https://fonts.bunny.net/css?family=inter:400,500,600,700|source-serif-4:500,600,700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--color-fg);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; height: auto; }
+h1, h2, h3, h4 { margin: 0; line-height: 1.15; color: var(--color-fg); }
+p { margin: 0; }
+a { color: var(--color-accent); text-underline-offset: 0.2em; }
+a:hover { color: var(--color-primary-deep); }
+
+.wrap { width: 100%; max-width: 72rem; margin-inline: auto; padding-inline: var(--space-lg); }
+@media (min-width: 768px) { .wrap { padding-inline: var(--space-xl); } }
+
+.eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+/* ---- layout/Header ---------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: color-mix(in srgb, var(--color-bg) 88%, transparent);
+  backdrop-filter: saturate(180%) blur(12px);
+  box-shadow: 0 1px 0 var(--color-line);
+}
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  min-height: 4rem;
+  flex-wrap: wrap;
+  padding-block: var(--space-sm);
+}
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+  color: var(--color-fg);
+  text-decoration: none;
+}
+.logo img { width: 2.75rem; height: 2.75rem; border-radius: var(--radius-full); }
+.site-nav { display: flex; flex-wrap: wrap; gap: var(--space-xs) var(--space-lg); }
+.nav-link {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-muted);
+  text-decoration: none;
+}
+.nav-link:hover { color: var(--color-fg); }
+.nav-link[aria-disabled="true"] { color: var(--color-muted); text-decoration: none; cursor: default; }
+.nav-link[aria-disabled="true"]:hover { color: var(--color-fg); }
+
+/* ---- home/Hero -------------------------------------------------------- */
+.hero { padding-block: var(--space-2xl) var(--space-3xl); }
+.hero h1 {
+  font-size: clamp(2.25rem, 5.5vw, 3.75rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+}
+.hero .lede { margin-top: var(--space-lg); font-size: 1.1875rem; color: var(--color-muted); max-width: 36rem; }
+.hero img { border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
+
+/* ---- shared sections --------------------------------------------------- */
+.section { padding-block: var(--space-3xl); }
+.section--tint { background: var(--color-surface); }
+@media (min-width: 1024px) { .section { padding-block: var(--space-4xl); } }
+.section-head { max-width: 40rem; margin-bottom: var(--space-2xl); }
+.section-head h2 {
+  margin-top: var(--space-sm);
+  font-size: clamp(1.75rem, 3.6vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.section-head p { margin-top: var(--space-md); color: var(--color-muted); font-size: 1.125rem; }
+
+/* ---- home/Services ---------------------------------------------------- */
+.card-grid { display: grid; gap: var(--space-lg); grid-template-columns: 1fr; }
+@media (min-width: 640px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .card-grid { grid-template-columns: repeat(3, 1fr); } }
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.card img { aspect-ratio: 4 / 3; width: 100%; object-fit: cover; }
+.card-body { padding: var(--space-lg); display: flex; flex-direction: column; gap: var(--space-sm); flex: 1; }
+.card h3 { font-size: 1.1875rem; font-weight: 600; letter-spacing: -0.01em; }
+.card p { color: var(--color-muted); font-size: 0.9875rem; }
+.card .card-path { margin-top: auto; padding-top: var(--space-sm); font-size: 0.875rem; font-weight: 600; color: var(--color-accent); }
+.card[data-href] { cursor: default; }
+.card[data-href]:hover { box-shadow: var(--shadow-lg); }
+
+/* ---- home/ServiceAreas ------------------------------------------------ */
+.pill-row { display: flex; flex-wrap: wrap; gap: var(--space-sm); padding: 0; margin: 0; list-style: none; }
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+  color: var(--color-fg);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.pill--accent { background: color-mix(in srgb, var(--color-primary) 12%, var(--color-bg)); color: var(--color-primary-deep); }
+
+/* ---- home/Portfolio --------------------------------------------------- */
+.gallery { display: grid; gap: var(--space-md); grid-template-columns: repeat(2, 1fr); margin: 0; padding: 0; list-style: none; }
+@media (min-width: 1024px) { .gallery { grid-template-columns: repeat(4, 1fr); } }
+.gallery figure { margin: 0; }
+.gallery img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius-sm); }
+.gallery figcaption { margin-top: var(--space-xs); font-size: 0.8125rem; color: var(--color-muted); }
+
+/* ---- home/Reviews ----------------------------------------------------- */
+.quote {
+  margin: 0;
+  padding: var(--space-lg);
+  background: var(--color-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+.quote p { font-size: 1.0625rem; color: var(--color-fg); }
+.quote footer, .quote cite { display: block; margin-top: var(--space-sm); font-size: 0.875rem; font-style: normal; color: var(--color-muted); }
+
+/* ---- home/Stats ------------------------------------------------------- */
+.stat { display: flex; flex-direction: column; gap: var(--space-xs); }
+.stat strong { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; color: var(--color-fg); line-height: 1.1; }
+.stat span { font-size: 0.875rem; color: var(--color-muted); }
+
+/* ---- shared/Button (claim page only) ---------------------------------- */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-sm) var(--space-lg);
+  min-height: 2.75rem;
+  border-radius: var(--radius-full);
+  background: var(--color-accent);
+  color: var(--color-bg);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+}
+.button:hover { background: var(--color-primary-deep); color: var(--color-bg); }
+.button--quiet { background: var(--color-surface); color: var(--color-fg); box-shadow: none; }
+.button--quiet:hover { background: var(--color-line); color: var(--color-fg); }
+
+/* ---- layout/Footer ---------------------------------------------------- */
+.site-footer { padding-block: var(--space-2xl); background: var(--color-surface); color: var(--color-muted); font-size: 0.9375rem; }
+.site-footer .wrap { display: flex; flex-direction: column; gap: var(--space-lg); }
+@media (min-width: 768px) { .site-footer .wrap { flex-direction: row; justify-content: space-between; align-items: flex-start; } }
+.site-footer .site-nav { gap: var(--space-xs) var(--space-lg); }

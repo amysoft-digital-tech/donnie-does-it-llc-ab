@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A website for Donnie Does It LLC, Louisville, KY</title>
+<meta name="description" content="Two versions of a website built for Donnie Does It LLC, fences, decks and home repairs in Louisville, KY.">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/components.css">
+<style>
+  .note { max-width: 40rem; margin-inline: auto; padding-block: var(--space-3xl) var(--space-2xl); }
+  .note .logo { margin-bottom: var(--space-2xl); }
+  .note p { font-size: 1.125rem; }
+  .note p + p { margin-top: var(--space-md); }
+  .narrow { max-width: 56rem; margin-inline: auto; }
+  .prose { max-width: 40rem; }
+  .prose p + p, .prose ul { margin-top: var(--space-md); }
+  .prose p, .prose li { color: var(--color-muted); }
+  .prose strong { color: var(--color-fg); }
+  .prose ul { padding-left: var(--space-lg); }
+  .prose li + li { margin-top: var(--space-sm); }
+  h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: var(--space-md); }
+
+  .versions { display: grid; gap: var(--space-xl); margin-top: var(--space-xl); }
+  @media (min-width: 768px) { .versions { grid-template-columns: 1fr 1fr; } }
+  .version img { aspect-ratio: 4 / 3; object-fit: cover; width: 100%; }
+  .version h3 { font-size: 1.25rem; }
+  .version .look { font-weight: 600; }
+  .version .actions { display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-md); }
+  .version .actions .button { width: 100%; }
+
+  .finish-table { width: 100%; border-collapse: collapse; margin-top: var(--space-xl); font-size: 0.9375rem; background: var(--color-bg); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+  .finish-table th, .finish-table td { padding: var(--space-md); text-align: left; vertical-align: top; }
+  .finish-table thead th, .finish-table thead td { background: var(--color-surface); font-weight: 600; }
+  .finish-table tbody th { font-weight: 600; color: var(--color-fg); width: 18%; }
+  .finish-table td { color: var(--color-muted); }
+  .finish-table tbody tr + tr > * { box-shadow: 0 -1px 0 var(--color-line); }
+  @media (max-width: 639px) {
+    .finish-table, .finish-table thead, .finish-table tbody, .finish-table tr, .finish-table th, .finish-table td { display: block; width: 100%; }
+    .finish-table thead { display: none; }
+    .finish-table tbody th { padding-bottom: 0; width: 100%; }
+    .finish-table td { padding-top: var(--space-xs); }
+    .finish-table td::before { content: attr(data-col); display: block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-fg); }
+    .finish-table tbody tr + tr > * { box-shadow: none; }
+    .finish-table tbody tr + tr { box-shadow: 0 -1px 0 var(--color-line); }
+  }
+  .addon { margin-top: var(--space-xl); }
+  .signoff { max-width: 40rem; margin-inline: auto; padding-block: var(--space-3xl); }
+  .signoff p + p { margin-top: var(--space-md); }
+  .signoff .sig { margin-top: var(--space-xl); color: var(--color-muted); font-size: 0.9375rem; }
+  .signoff .sig strong { color: var(--color-fg); display: block; }
+  hr.soft { border: 0; height: 1px; background: var(--color-line); margin: var(--space-2xl) 0; }
+</style>
+</head>
+<body>
+<main>
+  <section class="note wrap">
+    <span class="logo"><img src="assets/images/logo.png" alt="Donnie Does It LLC logo" width="44" height="44">Donnie Does It LLC</span>
+    <p>Hi Donnie,</p>
+    <p>You've built something real on Facebook and Nextdoor: six Facebook reviews, every one of them a recommendation, and hundreds of photos of finished fences, decks and stairs. What you don't have is a place online that's actually yours.</p>
+    <p>So I built Donnie Does It LLC one, from what's already on your Facebook and Nextdoor page, before asking you for anything. Click through it. If you like it, there's a simple way to make it yours below. If you don't, you've lost nothing.</p>
+  </section>
+
+  <section class="section section--tint">
+    <div class="wrap narrow">
+      <h2>What I made</h2>
+      <p class="prose" style="color:var(--color-muted)">Two versions, each fully built, each yours to click through. All of them tell the same story: Donnie Does It LLC builds and repairs fences, gates, decks and stairs, and handles floors, doors, windows, paint and drywall, for homes and offices in Louisville, KY.</p>
+
+      <div class="versions">
+        <article class="card version">
+          <img src="assets/images/hero--pergola-deck.jpg" alt="Rebuilt deck with white railings and a white pergola, the opening photo of version A" width="1200" height="1600">
+          <div class="card-body">
+            <p class="eyebrow">Version A</p>
+            <h3>Proof-led</h3>
+            <p class="look"><a href="a/">Take a look →</a></p>
+            <p>Light and open, with the blue from your logo as the only accent and one clean typeface. It opens on your rebuilt pergola deck, then shows your Facebook numbers and three before-and-after jobs set beside what customers said about them. Someone hiring for a fence or a deck wants to see the work first, and you have the photos to show it.</p>
+            <div class="actions">
+              <a class="button" href="https://buy.stripe.com/test_5kQ9AM3OdgWBewu8VjaR201?client_reference_id=donnie-does-it-llc-ab__a">Finish it and manage it for me</a>
+              <a class="button button--quiet" href="https://buy.stripe.com/test_00w3co4Sh0XDdsq3AZaR200?client_reference_id=donnie-does-it-llc-ab__a">Finish it, I'll host it myself</a>
+            </div>
+          </div>
+        </article>
+        <article class="card version">
+          <img src="assets/images/svc02--driveway-gate.jpg" alt="Wood privacy fence and gate across a driveway, the opening photo of version B" width="1600" height="1200">
+          <div class="card-body">
+            <p class="eyebrow">Version B</p>
+            <h3>Classic trade</h3>
+            <p class="look"><a href="b/">Take a look →</a></p>
+            <p>Navy and cream drawn from your logo, serif headings, and a centered, orderly layout with rule lines between sections. Your services read as a plain list, and finished jobs sit in even, framed photos. It feels steady and dependable, which is how your reviews describe you.</p>
+            <div class="actions">
+              <a class="button" href="https://buy.stripe.com/test_5kQ9AM3OdgWBewu8VjaR201?client_reference_id=donnie-does-it-llc-ab__b">Finish it and manage it for me</a>
+              <a class="button button--quiet" href="https://buy.stripe.com/test_00w3co4Sh0XDdsq3AZaR200?client_reference_id=donnie-does-it-llc-ab__b">Finish it, I'll host it myself</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap narrow prose">
+      <h2>About the photos</h2>
+      <p>The photos are yours, not stock. I took them from your public Nextdoor page and matched each one to its spot: the white pergola deck, the new picket fence by the brick house, and the stair treads before and after. You're looking at your own work, already in place.</p>
+      <p>If there's a photo you'd rather not use, tell me and it's gone. Before launch you can send me the full-size originals so the big images look crisp. Nothing goes live until you approve it.</p>
+
+      <hr class="soft">
+
+      <h2>Built to be found</h2>
+      <p>Each version reads as one scrolling page, but it's laid out as a full site. When it's finished, fence installation and repair, gates, decks, stairs and flooring and Louisville, KY each get their own page.</p>
+      <p>That matters because search engines and AI assistants like ChatGPT recommend businesses they can read clearly. A profile on someone else's platform can't do that for you. A site at your own address can.</p>
+    </div>
+  </section>
+
+  <section class="section section--tint">
+    <div class="wrap narrow">
+      <h2>Finish it</h2>
+      <p class="prose" style="color:var(--color-muted)">Pick the version you like, then choose how it's run. Either way, you get 2 rounds of corrections before launch, and the site goes live within 5–7 business days of your approval and the domain setup.</p>
+
+      <table class="finish-table">
+        <thead>
+          <tr><td></td><th scope="col">Finish it and manage it for me (recommended)</th><th scope="col">Finish it, I'll host it myself</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Price</th><td data-col="Manage it for me">$749, then $49/year</td><td data-col="I'll host it myself">$499, one time</td></tr>
+          <tr><th scope="row">Best for</th><td data-col="Manage it for me">Busy owners who want the site without the upkeep</td><td data-col="I'll host it myself">Owners comfortable running their own hosting</td></tr>
+          <tr><th scope="row">Your domain</th><td data-col="Manage it for me">I register it in your name and pay for it</td><td data-col="I'll host it myself">You buy it in your name (about $12/year) and I connect it</td></tr>
+          <tr><th scope="row">Hosting</th><td data-col="Manage it for me">I handle it</td><td data-col="I'll host it myself">It's handed over to your own GitHub account, where it runs on free hosting</td></tr>
+          <tr><th scope="row">After launch</th><td data-col="Manage it for me">$49/year covers hosting, upkeep and your domain renewal. You get a reminder 30 days before, and you can cancel anytime</td><td data-col="I'll host it myself">Nothing more to pay me. Just your domain renewal</td></tr>
+        </tbody>
+      </table>
+
+      <div class="prose addon">
+        <p><strong>Add a quote form (managed option).</strong> A form on your site that sends inquiries straight to your email, with spam filtering built in. It's recommended at checkout for $99, normally $149.</p>
+        <p>The buttons under each version take you to a secure checkout. After you pay, I'll get in touch to start.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap narrow prose">
+      <h2>It's yours</h2>
+      <p>This isn't Wix or Squarespace. Nobody rents you access to your own site.</p>
+      <ul>
+        <li><strong>Your name on everything.</strong> The domain is registered to you, and the words and photos are yours.</li>
+        <li><strong>Leave anytime.</strong> If you ever stop the managed option, you take the site and the domain with you.</li>
+        <li><strong>No platform lock-in.</strong> It's a real website, not a page trapped inside a builder.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="signoff wrap">
+    <hr class="soft" style="margin-top:0">
+    <p>If the bigger headache is the busywork behind the job, like quotes, scheduling and follow-ups, just reply to my message. I'm happy to talk about that instead.</p>
+    <p>And if what you want to do with this is nothing, that's fine too. I mostly wanted you to see your fences and decks look as good on a page as they do in a Louisville backyard.</p>
+    <p>Tell me which version you like better, or anything you'd change: <a href="mailto:inquiries@amysoft.tech">inquiries@amysoft.tech</a></p>
+    <p class="sig"><strong>Christopher Caruso</strong>Amysoft-AI · an Amysoft Digital Technologies line · <a href="https://amysoft-ai.online">amysoft-ai.online</a></p>
+  </section>
+</main>
+</body>
+</html>

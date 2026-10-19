@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Donnie Does It LLC | Fences, decks and home repairs in Louisville, KY</title>
+<meta name="description" content="Donnie Does It LLC builds and repairs fences, gates, decks and stairs in Louisville, KY, and handles floors, doors, windows, paint and drywall. Small fixes to full replacements.">
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/components.css">
+<style>
+  /* Variant A: Proof-led. Light split hero, proof strip, photo cards, before/after with reviews beside them. */
+  .hero-split { display: grid; gap: var(--space-2xl); align-items: center; }
+  @media (min-width: 900px) { .hero-split { grid-template-columns: 1.05fr 1fr; gap: var(--space-3xl); } }
+  .hero .tagline { margin-top: var(--space-lg); font-weight: 600; color: var(--color-fg); }
+  .hero .tagline span { color: var(--color-secondary); }
+  .hero .where { margin-top: var(--space-xl); }
+  .hero-media { position: relative; }
+  .hero-media > img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+  .hero-inset {
+    position: absolute; left: calc(-1 * var(--space-lg)); bottom: var(--space-xl);
+    width: 42%; background: var(--color-bg); padding: var(--space-xs);
+    border-radius: var(--radius); box-shadow: var(--shadow-lg);
+  }
+  .hero-inset img { border-radius: var(--radius-sm); box-shadow: none; aspect-ratio: 4 / 3; object-fit: cover; width: 100%; }
+  .hero-inset span { display: block; padding: var(--space-xs) var(--space-xs) 0; font-size: 0.75rem; font-weight: 600; color: var(--color-muted); }
+  .hero-media figcaption { margin-top: var(--space-sm); font-size: 0.8125rem; color: var(--color-muted); text-align: right; }
+  @media (max-width: 639px) { .hero-inset { left: var(--space-sm); width: 48%; bottom: var(--space-2xl); } }
+
+  .proof-strip { background: var(--color-surface); padding-block: var(--space-xl); }
+  .proof-strip .wrap { display: grid; gap: var(--space-lg); grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 900px) { .proof-strip .wrap { grid-template-columns: repeat(4, 1fr); } }
+  .proof-strip .note { grid-column: 1 / -1; font-size: 0.75rem; color: var(--color-muted); }
+
+  .also { margin-top: var(--space-2xl); display: grid; gap: var(--space-md); grid-template-columns: 1fr; }
+  @media (min-width: 640px) { .also { grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); } }
+  .also .card { box-shadow: var(--shadow-sm); background: var(--color-surface); }
+  .also .card-body { padding: var(--space-md) var(--space-lg); }
+
+  .pair { display: grid; gap: var(--space-xl); align-items: center; padding-block: var(--space-2xl); }
+  .pair + .pair { box-shadow: 0 -1px 0 var(--color-line); }
+  @media (min-width: 900px) { .pair { grid-template-columns: 1.4fr 1fr; gap: var(--space-3xl); } }
+  .pair-photos { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-sm); }
+  .pair-photos figure { margin: 0; }
+  .pair-photos img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: var(--radius-sm); }
+  .pair-photos figcaption { margin-top: var(--space-xs); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-muted); }
+  .pair-photos figure:last-child figcaption { color: var(--color-accent); }
+  .pair h3 { font-size: 1.375rem; font-weight: 700; letter-spacing: -0.015em; }
+  .pair .claim { margin-top: var(--space-sm); color: var(--color-muted); }
+  .pair .quote { margin-top: var(--space-lg); background: var(--color-bg); box-shadow: var(--shadow-sm); }
+
+  .area-grid { display: grid; gap: var(--space-2xl); }
+  @media (min-width: 900px) { .area-grid { grid-template-columns: 1fr 1fr; } }
+  .area-grid h3 { font-size: 1rem; font-weight: 600; margin-bottom: var(--space-md); }
+  .area-grid p { margin-top: var(--space-md); color: var(--color-muted); font-size: 0.9375rem; }
+
+  .about-grid { display: grid; gap: var(--space-2xl); align-items: center; }
+  @media (min-width: 900px) { .about-grid { grid-template-columns: 1fr 1.2fr; gap: var(--space-3xl); } }
+  .about-grid img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow); }
+  .about-copy p + p { margin-top: var(--space-md); }
+  .about-copy p { color: var(--color-muted); }
+  .about-copy .lead { color: var(--color-fg); font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; }
+
+  .reach { display: grid; gap: var(--space-xl); }
+  @media (min-width: 900px) { .reach { grid-template-columns: repeat(3, 1fr); } }
+  .reach h3 { font-size: 1.0625rem; font-weight: 600; margin-bottom: var(--space-sm); }
+  .reach p { color: var(--color-muted); font-size: 0.9875rem; }
+  .reach .platform { font-weight: 600; }
+  .site-footer { background: var(--color-bg); box-shadow: 0 -1px 0 var(--color-line); }
+  .site-footer .fine { font-size: 0.8125rem; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" aria-disabled="true" data-href="/"><img src="../assets/images/logo.png" alt="Donnie Does It LLC logo: a blue picket fence, red house and hammer inside a blue ring" width="44" height="44">Donnie Does It LLC</a>
+    <nav class="site-nav" aria-label="Main">
+      <a class="nav-link" aria-disabled="true" data-href="/services/">Services</a>
+      <a class="nav-link" aria-disabled="true" data-href="/about/">About</a>
+      <a class="nav-link" aria-disabled="true" data-href="/work/">Work</a>
+      <a class="nav-link" aria-disabled="true" data-href="/service-area/">Service area</a>
+      <a class="nav-link" aria-disabled="true" data-href="/contact/">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-split">
+      <div>
+        <p class="eyebrow">Fences, decks and home repairs · Louisville, KY</p>
+        <h1>Fences, decks and repairs for Louisville homes.</h1>
+        <p class="lede">Donnie Does It LLC builds and repairs fences, gates, decks and stairs, and takes the indoor jobs too: floors, doors, windows, paint and drywall. From a single fence post to a full replacement.</p>
+        <p class="tagline">Fix it. Build it. <span>Donnie Does It.</span></p>
+        <ul class="pill-row where" aria-label="At a glance">
+          <li class="pill pill--accent">Louisville, KY</li>
+          <li class="pill">Homes and offices</li>
+          <li class="pill">Small fixes to full replacements</li>
+        </ul>
+      </div>
+      <figure class="hero-media" style="margin:0">
+        <img src="../assets/images/hero--pergola-deck.jpg" alt="Rebuilt deck with white railings, a white pergola and lattice skirting along a tan brick house" width="1200" height="1600">
+        <div class="hero-inset">
+          <img src="../assets/images/work01--deck-before.jpg" alt="The same house before: an old brown-stained deck with overgrown shrubs" width="1600" height="1200">
+          <span>Before</span>
+        </div>
+        <figcaption>Deck tear-down and rebuild, Louisville</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="proof-strip" aria-label="Proof">
+    <div class="wrap">
+      <div class="stat"><strong>100%</strong><span>recommend on Facebook</span></div>
+      <div class="stat"><strong>6</strong><span>Facebook reviews</span></div>
+      <div class="stat"><strong>390+</strong><span>photos of the work posted</span></div>
+      <div class="stat"><strong>Louisville</strong><span>service area, KY</span></div>
+      <p class="note">Figures from the Donnie Does It LLC Facebook page, October 2026.</p>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Services</p>
+        <h2>Outside the house, and inside it too</h2>
+        <p>Fences and decks are most of the work. The same hands fix the stairs, the floor and the drywall.</p>
+      </div>
+      <div class="card-grid">
+        <article class="card" data-href="/services/fence-installation/">
+          <img src="../assets/images/work04--fence-after.jpg" alt="New pine picket fence running along a red brick house" width="1600" height="1200" loading="lazy">
+          <div class="card-body">
+            <h3>Fence installation and replacement</h3>
+            <p>New wood privacy and picket fences, or an old fence taken out and replaced. Measured and set to the property line.</p>
+            <span class="card-path">Fence installation</span>
+          </div>
+        </article>
+        <article class="card" data-href="/services/fence-repair/">
+          <img src="../assets/images/svc01--fence-repair.jpg" alt="Fresh pine fence section set into an older weathered privacy fence" width="1600" height="1200" loading="lazy">
+          <div class="card-body">
+            <h3>Fence repair</h3>
+            <p>Broken posts replaced and worn sections rebuilt, so the fence you have keeps standing.</p>
+            <span class="card-path">Fence repair</span>
+          </div>
+        </article>
+        <article class="card" data-href="/services/gates/">
+          <img src="../assets/images/svc02--driveway-gate.jpg" alt="New wood privacy fence and gate closing off the end of a driveway" width="1600" height="1200" loading="lazy">
+          <div class="card-body">
+            <h3>Gates, wood and iron</h3>
+            <p>New gates and gate repairs, including privacy gates across a driveway.</p>
+            <span class="card-path">Gates</span>
+          </div>
+        </article>
+        <article class="card" data-href="/services/decks/">
+          <img src="../assets/images/work02--deck-night.jpg" alt="Rebuilt deck and ramp at night, with lights on the railing posts" width="1600" height="1205" loading="lazy">
+          <div class="card-body">
+            <h3>Decks and roof decks</h3>
+            <p>Old decks torn down and rebuilt, with railings, ramps and pergolas, plus deck renovations.</p>
+            <span class="card-path">Decks</span>
+          </div>
+        </article>
+        <article class="card" data-href="/services/stairs/">
+          <img src="../assets/images/svc03--exterior-stairs.jpg" alt="New pine staircase climbing to an elevated deck beside a house" width="1200" height="1600" loading="lazy">
+          <div class="card-body">
+            <h3>Stairs and railings</h3>
+            <p>Outdoor stairs up to a deck, and porch rails that make the steps safer.</p>
+            <span class="card-path">Stairs</span>
+          </div>
+        </article>
+        <article class="card" data-href="/services/stair-treads/">
+          <img src="../assets/images/work06--stairs-after.jpg" alt="Indoor staircase with stained wood treads and white risers" width="1200" height="1600" loading="lazy">
+          <div class="card-body">
+            <h3>Stair treads and risers</h3>
+            <p>Indoor stairs upgraded with new treads and risers.</p>
+            <span class="card-path">Stair treads</span>
+          </div>
+        </article>
+      </div>
+      <div class="also">
+        <article class="card" data-href="/services/flooring/">
+          <div class="card-body"><h3>Flooring</h3><p>New floors, including a kitchen floor replaced after a leak.</p></div>
+        </article>
+        <article class="card" data-href="/services/doors-and-windows/">
+          <div class="card-body"><h3>Doors and windows</h3><p>Doors and windows replaced or repaired.</p></div>
+        </article>
+        <article class="card" data-href="/services/painting-and-drywall/">
+          <div class="card-body"><h3>Painting and drywall</h3><p>Drywall fixes and fresh paint, indoors.</p></div>
+        </article>
+        <article class="card" data-href="/services/exterior-repairs/">
+          <div class="card-body"><h3>Exterior repairs</h3><p>The outside fixes that keep a house in good shape.</p></div>
+        </article>
+        <article class="card" data-href="/services/handyman/">
+          <div class="card-body"><h3>Handyman work</h3><p>The list of small jobs, for a home or an office.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tint" id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Before and after</p>
+        <h2>The work, and what customers said about it</h2>
+        <p>Three real jobs, each beside a Facebook review about the same kind of work. Reviews are paraphrased.</p>
+      </div>
+
+      <div class="pair">
+        <div class="pair-photos">
+          <figure><img src="../assets/images/work03--fence-before.jpg" alt="Old grey, mildewed picket fence corner before replacement" width="1200" height="1600" loading="lazy"><figcaption>Before</figcaption></figure>
+          <figure><img src="../assets/images/work04--fence-after.jpg" alt="New pine picket fence along the side of a brick house" width="1600" height="1200" loading="lazy"><figcaption>After</figcaption></figure>
+        </div>
+        <div>
+          <h3>Fences set where they belong</h3>
+          <p class="claim">Old fences come out, new ones go in on the right line.</p>
+          <blockquote class="quote">
+            <p>A homeowner had a 6-foot privacy fence installed. He came out more than once to measure and check the property line, stayed patient through her changes, and finished quickly at a fair price.</p>
+            <footer>Facebook review, paraphrased</footer>
+          </blockquote>
+        </div>
+      </div>
+
+      <div class="pair">
+        <div class="pair-photos">
+          <figure><img src="../assets/images/work01--deck-before.jpg" alt="Old brown deck with worn railings before the tear-down" width="1600" height="1200" loading="lazy"><figcaption>Before</figcaption></figure>
+          <figure><img src="../assets/images/hero--pergola-deck.jpg" alt="Finished deck with white railings and a white pergola" width="1200" height="1600" loading="lazy"><figcaption>After</figcaption></figure>
+        </div>
+        <div>
+          <h3>Decks torn down and rebuilt</h3>
+          <p class="claim">From an old stained deck to new railings, a ramp and a pergola.</p>
+          <blockquote class="quote">
+            <p>One customer had him build her fence, then tear down and rebuild the deck at her parents' house, and highly recommends him. Another had both a fence and a deck done and called the work high quality and on time.</p>
+            <footer>Facebook reviews, paraphrased</footer>
+          </blockquote>
+        </div>
+      </div>
+
+      <div class="pair">
+        <div class="pair-photos">
+          <figure><img src="../assets/images/work05--stairs-before.jpg" alt="Indoor staircase mid-job with plain primed treads" width="1200" height="1600" loading="lazy"><figcaption>Before</figcaption></figure>
+          <figure><img src="../assets/images/work06--stairs-after.jpg" alt="The same staircase finished with stained treads and white risers" width="1200" height="1600" loading="lazy"><figcaption>After</figcaption></figure>
+        </div>
+        <div>
+          <h3>Inside jobs, done the same way</h3>
+          <p class="claim">A stair tread and riser upgrade, and floors after water damage.</p>
+          <blockquote class="quote">
+            <p>He replaced a whole kitchen floor after a plumbing leak, on time and professionally, and added a front-porch rail so aging parents are safer on the steps.</p>
+            <footer>Facebook review, paraphrased</footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="gallery-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Recent work</p>
+        <h2 id="gallery-title">Jobs around Louisville</h2>
+      </div>
+      <ul class="gallery">
+        <li><figure><img src="../assets/images/svc02--driveway-gate.jpg" alt="Privacy fence and gate across a driveway" width="1600" height="1200" loading="lazy"><figcaption>Driveway fence and gate</figcaption></figure></li>
+        <li><figure><img src="../assets/images/svc01--fence-repair.jpg" alt="New pine section in an older fence" width="1600" height="1200" loading="lazy"><figcaption>Fence section repair</figcaption></figure></li>
+        <li><figure><img src="../assets/images/hero--pergola-deck.jpg" alt="White pergola deck with lattice skirt" width="1200" height="1600" loading="lazy"><figcaption>Deck and pergola</figcaption></figure></li>
+        <li><figure><img src="../assets/images/work02--deck-night.jpg" alt="Deck and ramp lit at night" width="1600" height="1205" loading="lazy"><figcaption>Deck lighting</figcaption></figure></li>
+        <li><figure><img src="../assets/images/svc03--exterior-stairs.jpg" alt="Pine stairs up to an elevated deck" width="1200" height="1600" loading="lazy"><figcaption>Deck stairs</figcaption></figure></li>
+        <li><figure><img src="../assets/images/work06--stairs-after.jpg" alt="Indoor stairs with stained treads" width="1200" height="1600" loading="lazy"><figcaption>Stair treads and risers</figcaption></figure></li>
+        <li><figure><img src="../assets/images/work04--fence-after.jpg" alt="New picket fence beside a brick house" width="1600" height="1200" loading="lazy"><figcaption>Picket fence</figcaption></figure></li>
+        <li><figure><img src="../assets/images/work03--fence-before.jpg" alt="Weathered fence before replacement" width="1200" height="1600" loading="lazy"><figcaption>Before a replacement</figcaption></figure></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--tint" id="service-area">
+    <div class="wrap area-grid">
+      <div>
+        <p class="eyebrow">Service area</p>
+        <div class="section-head" style="margin-bottom:0">
+          <h2>Serving Louisville, KY</h2>
+          <p>Homes and offices around Louisville. Ask on Facebook if you're not sure your street is covered.</p>
+        </div>
+      </div>
+      <div>
+        <h3>Areas served</h3>
+        <ul class="pill-row">
+          <li class="pill pill--accent">Louisville, KY</li>
+        </ul>
+        <h3 style="margin-top:var(--space-xl)">What he takes on</h3>
+        <ul class="pill-row">
+          <li class="pill">Fences</li>
+          <li class="pill">Gates</li>
+          <li class="pill">Decks</li>
+          <li class="pill">Roof decks</li>
+          <li class="pill">Stairs</li>
+          <li class="pill">Doors</li>
+          <li class="pill">Windows</li>
+          <li class="pill">Flooring</li>
+          <li class="pill">Painting</li>
+          <li class="pill">Drywall</li>
+          <li class="pill">Exterior repairs</li>
+          <li class="pill">Handyman</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="wrap about-grid">
+      <img src="../assets/images/svc03--exterior-stairs.jpg" alt="New pine staircase built up to a raised deck" width="1200" height="1600" loading="lazy">
+      <div class="about-copy">
+        <p class="eyebrow">About</p>
+        <p class="lead" style="margin-top:var(--space-sm)">Trusted for jobs that need done right.</p>
+        <p>Donnie started Donnie Does It LLC to take on fence, deck and repair work around Louisville, and he posts photos of the jobs as he finishes them.</p>
+        <p>He handles fences, decks, doors, windows, stairs, flooring, painting and drywall, from small repairs to full replacements, for homes and offices. He describes the business as licensed, insured, honest and fair with pricing.</p>
+        <p>Customers mention the same things: he shows up when he says, measures before he builds, and does the work at a fair price.</p>
+        <blockquote class="quote" style="margin-top:var(--space-lg)">
+          <p>One customer needed a single privacy-fence post replaced. He arrived early, worked through the rain, also secured the rails on her back steps, and charged a reasonable price. She plans to call him again.</p>
+          <footer>Facebook review, paraphrased</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tint" id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Contact</p>
+        <h2>How to reach Donnie</h2>
+      </div>
+      <div class="reach">
+        <div>
+          <h3>Send a message</h3>
+          <p>Message Donnie Does It LLC on its Facebook page. <a class="platform" href="https://www.facebook.com/DonnieDoesItLlc">Find us on Facebook</a></p>
+        </div>
+        <div>
+          <h3>Tell him the job</h3>
+          <p>Say what needs fixing or building. Reviewers describe him coming out to measure before the work starts.</p>
+        </div>
+        <div>
+          <h3>Where</h3>
+          <p>Louisville, KY. Homes and offices.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="logo" aria-disabled="true" data-href="/"><img src="../assets/images/logo.png" alt="Donnie Does It LLC logo" width="44" height="44">Donnie Does It LLC</a>
+      <p class="fine" style="margin-top:var(--space-sm)">Fences, decks and more · Louisville, KY</p>
+    </div>
+    <nav class="site-nav" aria-label="Footer">
+      <a class="nav-link" aria-disabled="true" data-href="/services/">Services</a>
+      <a class="nav-link" aria-disabled="true" data-href="/about/">About</a>
+      <a class="nav-link" aria-disabled="true" data-href="/work/">Work</a>
+      <a class="nav-link" aria-disabled="true" data-href="/service-area/">Service area</a>
+      <a class="nav-link" aria-disabled="true" data-href="/contact/">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
